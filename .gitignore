@@ -31,5 +31,5 @@ _ReSharper*/
 #Nuget packages folder
 packages/
 node_modules/*
-database/*
+database/test.sqlite3
 package-lock.json
