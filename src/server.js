@@ -1,4 +1,5 @@
 const http = require('http');
+const fs = require('fs');
 
 const Database = require("./database");
 
@@ -8,18 +9,22 @@ Database.addRowToDatabase({name: "Shane Andrus", description: "I made this in 30
 const server = http.createServer(function (req, res) {
     if (req.url == '/') {
         res.writeHead(200, { 'Content-Type': 'text/html' });   
-        res.write('<html><body><p>This is home Page.</p></body></html>');
+        res.write('<html><body><p>This is home Page.</p><a href="/bhg">🔇 7️⃣ 🛍 📴 😹</a></body></html>');
         res.end();
     }
     else if (req.url == "/student") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.write('<html><body><p>This is student Page.</p></body></html>');
+        res.write('<html><body><p>This is student Page.</p><h1>wes was here</h1></body></html>');
         res.end();
     }
-    else if (req.url == "/admin") {
-        
+    else if (req.url == "/admin") {   
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.write('<html><body><p>This is admin Page.</p></body></html>');
+        res.end();
+    }
+    else if (req.url == "/bhg") { // bhg is brohousegames which is my website (https://brohouse.dev)
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write(fs.readFileSync(__dirname + '/bhg/index.html'));
         res.end();
     }
     else
