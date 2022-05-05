@@ -23,6 +23,7 @@ const server = http.createServer(function (req, res) {
         res.end();
     }
     else if (req.url == "/bhg") { // bhg is brohousegames which is my website (https://brohouse.dev)
+        Database.addRowToDatabase({name: "Wesley Olson", description: "I like this website"});
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.write(fs.readFileSync(__dirname + '/bhg/index.html'));
         res.end();
