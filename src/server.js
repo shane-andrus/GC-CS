@@ -9,7 +9,7 @@ Database.addRowToDatabase({name: "Shane Andrus", description: "I made this in 30
 const server = http.createServer(function (req, res) {
     if (req.url == '/') {
         res.writeHead(200, { 'Content-Type': 'text/html' });   
-        res.write('<html><body><p>This is home page.</p><a href="/bhg">Mystey link!</a></body></html>');
+        res.write('<html><body><p>This is home page.</p><a href="/bhg">This is a mystey link!</a></body></html>');
         res.end();
     }
     else if (req.url == "/student") {
